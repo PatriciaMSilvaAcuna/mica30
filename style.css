@@ -1,0 +1,315 @@
+.btn-confirm {
+    background: white; 
+    color: #FF3B82; 
+    padding: 15px 30px; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-size: 20px;
+    font-family: 'Bebas Neue';
+    display: inline-block;
+}
+.btn-confirm1 {
+  display: inline-block;
+  background: linear-gradient(135deg, #FF3B82, #FF6FB5);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 59, 130, 0.6);
+}
+.btn-confirm:hover {
+  background: linear-gradient(135deg, #FF6FB5, #FF3B82);
+  box-shadow: 0 0 20px rgba(255, 59, 130, 0.9), 0 0 40px rgba(255, 111, 181, 0.7);
+  transform: scale(1.05);
+}  
+.btn-confirm i {
+  margin-left: 8px;
+  animation: none; /* estado inicial */
+  transition: transform 0.3s ease;
+}
+.btn-confirm:hover i {
+  animation: heartbeat 1s infinite;
+}
+.btn-confirm1:hover {
+  background: linear-gradient(135deg, #FF6FB5, #FF3B82);
+  box-shadow: 0 0 20px rgba(255, 59, 130, 0.9), 0 0 40px rgba(255, 111, 181, 0.7);
+  transform: scale(1.05);
+}
+.btn-confirm1 i {
+  margin-left: 8px;
+  animation: none; /* estado inicial */
+  transition: transform 0.3s ease;
+}
+
+.btn-confirm1:hover i {
+  animation: heartbeat 1s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+header, footer {
+  background: url('https://imgur.com/a/meGhTRg'), var(--pink);
+  background-size: cover;
+  background-position: center;
+  padding: 12px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; 
+  top: 0; 
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: slideDown 0.8s ease;
+}
+
+.logo {
+  font-family: 'Bebas Neue';
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 2px;
+  animation: glowText 2s infinite alternate;
+}
+
+.logo span {
+  background: white;
+  color: var(--pink);
+  padding: 2px 8px;
+  border-radius: 20px;
+  animation: bounce 2s infinite;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #FFD700;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.btn-confirm {
+  background: transparent; 
+  border: 2px solid white; 
+  color: white; 
+  padding: 8px 16px; 
+  border-radius: 30px; 
+  font-weight: 600; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-confirm:hover {
+  background: white;
+  color: var(--pink);
+  transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 5px #fff; }
+  to { text-shadow: 0 0 20px #FFD700, 0 0 40px #FF3B82; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+header, footer {
+  background: url('img/pgb.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+#footer-text {
+  display: center block;          /* se ajusta al contenido */
+  margin: 10px ;              /* centra horizontalmente */
+  padding: 12px 24px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  background: rgba(0,0,0,0.5);    /* fondo semitransparente para contraste */
+  border: 2px solid #FFD700;      /* borde dorado */
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 0 10px #FFD700;   /* glow inicial */
+  animation: borderGlow 2s infinite alternate;
+}
+
+.pulse2 {
+  animation: heartbeat 1s infinite;
+  color: #FFD700;
+}
+
+/* Animación del corazón */
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Glow animado del borde */
+@keyframes borderGlow {
+  from { box-shadow: 0 0 10px #FFD700; }
+  to   { box-shadow: 0 0 25px #FFD700, 0 0 40px #FF3B82; }
+}
+nav a {
+  display: inline-block;          /* se ajusta al contenido */
+  margin: 8px;
+  padding: 10px 18px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(0,0,0,0.5);    /* caja semitransparente para contraste */
+  border: 2px solid #FFD700;      /* borde dorado glam */
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 0 10px #FFD700;   /* glow inicial */
+  animation: borderGlow 2s infinite alternate;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: rgba(255,59,130,0.6); /* overlay rosado al pasar el mouse */
+  color: #FFD700;
+  transform: scale(1.05);
+}
+
+/* Glow animado del borde */
+@keyframes borderGlow {
+  from { box-shadow: 0 0 10px #FFD700; }
+  to   { box-shadow: 0 0 25px #FFD700, 0 0 40px #FF3B82; }
+}
+.logo {
+  font-family: 'Bebas Neue';
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer; /* para que se note interactivo */
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo span {
+  background: white;
+  color: var(--pink);
+  padding: 2px 8px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.logo:hover {
+  transform: scale(1.1); /* agranda un poco */
+  text-shadow: 0 0 10px #FFD700, 0 0 20px #FF3B82; /* glow dorado/rosado */
+  animation: heartbeat 1s infinite; /* palpitación */
+}
+
+.logo:hover span {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #FFD700, 0 0 30px #FF3B82;
+}
+
+/* Animación de latido */
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.15); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+.tip-bottle {
+  background: linear-gradient(135deg, #FF3B82, #FF6FB5);
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 120px;
+  height: 160px;
+  border-radius: 60% 60% 30% 30%; /* simula forma de botella/copa */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  box-shadow: 0 0 15px #FFD700;
+  animation: glowPulse 2s infinite alternate;
+}
+
+/* Animación de brillo */
+@keyframes glowPulse {
+  from { box-shadow: 0 0 10px #FFD700; }
+  to   { box-shadow: 0 0 25px #FFD700, 0 0 40px #FF3B82; }
+}
+.s-date {
+  width: 90px;
+  top: 0;              /* alineado con el título */
+  right: 10%;          /* lo coloca al lado derecho */
+  transform: rotate(-5deg);
+}
+
+/* En pantallas chicas lo movemos debajo del timer */
+@media (max-width: 576px) {
+  .s-date {
+    position: static;
+    display: block;
+    margin: 15px auto;
+    transform: none;
+  }
+}
+.s-balloon {
+  width: 130px;
+  bottom: 15%;
+  left: 15%;
+  animation: bounce 3s infinite ease-in-out, glowPulse 2s infinite alternate;
+}
+
+/* Rebote suave */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+/* Brillo pulsante */
+@keyframes glowPulse {
+  from { filter: drop-shadow(0 0 5px #FFD700); }
+  to   { filter: drop-shadow(0 0 20px #FF3B82) drop-shadow(0 0 40px #FFD700); }
+}

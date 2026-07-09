@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- VISTA PREVIA PARA WHATSAPP -->
+<title>Mica 30 - Treinta Coqueta Próspera ✨</title>
+   
+<meta name="description" content="¡No faltes! Vení a celebrar mis 30 años. Coqueta, Linda y al 100. Sábado 12 de Septiembre 21:00hs">
+<meta property="og:title" content="Mica 30 - Treinta Coqueta Próspera ✨">
+<meta property="og:description" content="¡No faltes! Vení a celebrar mis 30 años. Dress Code: Pink Vibes">
+<meta property="og:image" content="img/logo.png"> 
+<meta property="og:url" content="img/logo.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FF3B82">
+<link rel="stylesheet" href="style.css">
+
+</head>
+    <!-- FUENTE DE ICONOS GRATIS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#FF3B82;
+    --light-pink:#FFD6E5;
+    --bg-pink:#FFF0F5;
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{
+    font-family: 'Poppins', sans-serif;
+    background: url('https://imgur.com/a/meGhTRg'), linear-gradient(180deg, #FFD6E5 0%, #FFF0F5 100%);
+    background-size: 400px;
+    background-attachment: fixed;
+    color:#4A2C3A;
+    overflow-x:hidden;
+  }
+  
+  header{
+    
+    background-size: 400px;
+    padding: 12px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky; top:0; z-index:100;
+  }
+  .logo{font-family:'Bebas Neue'; font-size:2rem; color:white; letter-spacing:2px;}
+  .logo span{background:white; color:var(--pink); padding:2px 8px; border-radius:20px;}
+  nav a{color:white; text-decoration:none; margin:0 10px; font-size:0.9rem;}
+  .btn-confirm{
+    background:transparent; border:2px solid white; color:white; 
+    padding:8px 16px; border-radius:30px; font-weight:600; cursor:pointer;
+  }
+
+  .hero{
+    padding:100px 5% 120px;
+    text-align:center;
+    position:relative;
+  }
+  .hero h1{
+    font-family:'Bebas Neue'; 
+    font-size:4.5rem; 
+    color:var(--pink);
+    background:white; padding:15px 25px; border-radius:20px;
+    display:inline-block; transform:rotate(-3deg);
+    box-shadow: 5px 5px 0px #FF3B82; position:relative; z-index:2;
+    text-shadow: 0 0 10px #fff, 0 0 20px #FF3B82; /* BRILLO */
+  }
+  .hero h2{font-family:'Dancing Script'; font-size:2.2rem; color:#4A2C3A; margin-top:10px; position:relative; z-index:2;}
+  .big-30{font-family:'Bebas Neue'; font-size:8rem; color:var(--pink); text-shadow:4px 4px white, 0 0 30px #FF3B82; position:relative; z-index:2;}
+
+  /* STICKERS */
+  .sticker{position:absolute; z-index:1;}
+  .sticker img{width:100%; filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.1));}
+  .s-copa{width:90px; top:10%; left:5%; transform:rotate(-15deg);}
+  .s-disco{width:130px; top:20%; left:15%; transform:rotate(10deg);}
+  .s-globos{width:140px; top:5%; right:8%;}
+  .s-mtv{width:80px; top:25%; right:15%; transform:rotate(8deg);}
+  .s-ticket{width:150px; top:40%; right:20%; transform:rotate(-5deg);}
+  .s-labios{width:100px; bottom:15%; right:10%;}
+  .s-gorro{width:80px; top:50%; left:8%; transform:rotate(-20deg);}
+  .s-corazon{width:70px; top:55%; left:12%;}
+  .s-mujer{width:110px; bottom:25%; left:5%;}
+  .s-balloon{width:130px; bottom:15%; left:15%;}
+
+  .countdown{padding:80px 5%; text-align:center; background:var(--bg-pink); position:relative;}
+  .countdown h2{font-family:'Dancing Script'; font-size:3rem; color:var(--pink); text-decoration:underline wavy;}
+  .timer{display:flex; justify-content:center; gap:15px; margin-top:30px; flex-wrap:wrap;}
+  .time-box{
+    background:white; padding:20px; border-radius:15px; min-width:100px;
+    box-shadow:0 4px 15px rgba(255,59,130,0.3);
+    border: 2px solid var(--light-pink);
+  }
+  .time-box span{font-family:'Bebas Neue'; font-size:3rem; color:var(--pink);}
+
+  .gallery{padding:60px 5%; text-align:center; position:relative;}
+  .gallery h2{font-family:'Dancing Script'; font-size:2.5rem;}
+  .gallery h2 span{color:var(--pink);}
+  .photos{display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:30px 0;}
+  .photos img{width:160px; height:160px; object-fit:cover; border:8px solid white; transform:rotate(-5deg); box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+  .photos img:nth-child(even){transform:rotate(5deg);}
+  .btn-pink{
+    background:var(--pink); color:white; border:none; padding:12px 25px; 
+    border-radius:30px; font-weight:600; cursor:pointer; font-size:1rem;
+    box-shadow: 0 4px 10px rgba(255,59,130,0.4);
+  }
+
+  .details{
+    background:var(--bg-pink); padding:60px 5%; 
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px; position:relative;
+  }
+  .details h2{font-family:'Dancing Script'; font-size:3rem; color:var(--pink); grid-column:1/-1; text-align:center;}
+  .detail-item h3{color:var(--pink); font-weight:700; margin-bottom:5px;}
+
+  .confirmacion{
+    background: url('https://imgur.com/H2CcTd0'), var(--pink);
+    background-size: 400px;
+    color:white; text-align:center; padding:60px 5%; position:relative;
+  }
+  .confirmacion h2{font-family:'Bebas Neue'; font-size:3rem; margin-bottom:10px;}
+  .confirmacion p{font-family:'Dancing Script'; font-size:1.8rem;}
+
+  @media(max-width:768px){
+    nav{display:none;}
+    .hero h1{font-size:2.5rem;}
+    .sticker{display:none;}
+  }
+
+  /* CONFETI */
+  .confetti {
+    position: fixed; width: 10px; height: 10px;
+    background-color: var(--pink); top: -10px;
+    animation: fall linear infinite; z-index: 1000; pointer-events: none;
+  }
+  @keyframes fall {
+    to { transform: translateY(100vh) rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+
+<!-- CONFETI SE GENERA CON JS -->
+
+<header>
+  <div class="logo">MICA <span>30</span></div>
+  <nav>
+    <a href="#cuenta">Cuenta regresiva</a>
+    <a href="#galeria">Galería</a>
+    <a href="#detalles">Detalles</a>
+    <a href="#ubicacion">Ubicación</a>
+  </nav>
+ 
+</header>
+
+<section class="hero">
+  <!-- STICKERS -->
+  <div class="sticker s-copa"><img src="https://cdn-icons-png.flaticon.com/512/3033/3033144.png"></div>
+  <div class="sticker s-disco"><img src="img/heart.svg"></div>
+  <div class="sticker s-globos"><img src="img/disco-ball.png"></div>
+  <div class="sticker s-mtv"><img src="img/star.png"></div>
+  <div class="sticker s-ticket"><img src="img/jenna.png"></div>
+  
+  <h1>TREINTA<br>COQUETA<br>PRÓSPERA</h1>
+  <h2>y brillando ✨</h2>
+  <div class="big-30">30</div>
+  <p style="background:#FF3B82; color:white; padding:5px 15px; display:inline-block; border-radius:10px; margin-top:10px;">EDICIÓN LIMITADA BIRTHDAY GIRL</p>
+</section>
+
+<section class="countdown" id="cuenta">
+  <div class="sticker s-gorro"><img src="img/star.png"></div>
+  <div class="sticker s-corazon"><img src="https://cdn-icons-png.flaticon.com/512/833/833472.png"></div>
+  <div class="sticker s-date"><img src="img/date.png" alt="calendario"></div>
+  
+  <div class="sticker s-labios"><img src="img/star.png"></div>
+  <div class="sticker s-labios"><img src="img/star.png"></div>
+  
+  
+  <h2>Cuenta regresiva</h2>
+  <div class="timer">
+    <div class="time-box"><span id="days">00</span><br>DÍAS</div>
+    <div class="time-box"><span id="hours">00</span><br>HORAS</div>
+    <div class="time-box"><span id="minutes">00</span><br>MINUTOS</div>
+    <div class="time-box"><span id="seconds">00</span><br>SEGUNDOS</div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="sticker s-mujer"><img src="img/db.png"></div>
+  
+  <h2><span>30 años</span> en 6 fotos</h2>
+  <div class="photos">
+    <!-- CAMBIA ESTAS 6 FOTOS POR LAS DE MICA -->
+    <img src="img/mxs.png" alt="">
+    <img src="https://placehold.co/160x160/FFD6E5/FF3B82?text=Foto+2" alt="">
+    <img src="https://placehold.co/160x160/FFD6E5/FF3B82?text=Foto+3" alt="">
+    <img src="https://placehold.co/160x160/FFD6E5/FF3B82?text=Foto+4" alt="">
+    <img src="https://placehold.co/160x160/FFD6E5/FF3B82?text=Foto+5" alt="">
+    <img src="https://placehold.co/160x160/FFD6E5/FF3B82?text=Foto+6" alt="">
+  </div>
+  <button class="btn-pink">VER TODAS LAS FOTOS ✨</button>
+</section>
+
+<section class="details" id="detalles">
+  <h2>Detalles</h2>
+  <div class="detail-item">
+    <h3>FECHA</h3>
+    <p>Sábado 12 de Septiembre</p>
+    <h3>HORA</h3>
+    <p>21:00 hs</p>
+  </div>
+  <div class="detail-item">
+    <h3>DRESS CODE</h3>
+    <p>Más que el outfit, importa la actitud 💖</p>
+    <p> y Que Vengas!!!</p>
+    <div style="background:#FF3B82; color:white; padding:10px; border-radius:50%; width:120px; height:120px; display:flex; align-items:center; justify-content:center; text-align:center; font-size:0.8rem; margin:10px auto; font-weight:700;">
+      COQUETA<br>LINDA<br>Y AL 100
+    </div>
+    <div class="tip-bottle">
+  ¡Traé tu<br>bebida! 🍷
+</div>
+
+  </div>
+  <div class="detail-item" id="ubicacion">
+    <h3>LUGAR</h3>
+    <P> Salón Multieventos Don Angel</P>
+    <p>Av. del Libertador 7643,<br>Cruce Castelar</p>
+    <br>
+    <a href="https://maps.app.goo.gl/C7ykBHwzHW7WHq6k9" target="_blank" class="btn-confirm1"> VER UBICACIÓN ✨ <i class="fa-solid fa-heart"></i></a>
+  </div>
+</section>
+<section  class="confirmacion" id="confirmacion">
+
+  <div class="sticker s-balloon"><img src="img/balloon-dog.png"></div>
+  
+  <h2>GOING ON 30</h2>
+  <div class="big-30" style="font-size:5rem; color:white;">30</div>
+  <h2>30 pero icónica</h2>
+  <p>¡No faltes!</p>
+  <p>Confirmá tu asistencia</p>
+  <br>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfF_WX1zH15n6VW-wFLKDPuHo9TvJ03UsoilZMT_qD4Z0rfhA/viewform?usp=sharing&ouid=101571221964071632761" 
+   target="_blank"
+   class="btn-confirm"> CONFIRMAR ASISTENCIA ✨ <i class="fa-solid fa-location-dot fa-heart"></i>
+  </a>  
+  
+
+  <p style="margin-top:20px; font-size:1rem;">30 y viviendo mi mejor era</p>
+</section>
+  <br>
+  <footer>
+    <br>
+    <br>
+  <p id="footer-text">Creado por P@tito  con <span class="fa fa-heart pulse2"></span> Para Mica</p>
+  <br>
+  
+  </footer>
+
+<script>
+// CUENTA REGRESIVA
+const eventDate = new Date("Septembre 12, 2026 21:00:00").getTime(); // FECHA DEL EVENTO
+const timer = setInterval(function(){
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+  document.getElementById("days").innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2,'0');
+  document.getElementById("hours").innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2,'0');
+  document.getElementById("minutes").innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2,'0');
+  document.getElementById("seconds").innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2,'0');
+  if(distance < 0){ clearInterval(timer); }
+}, 1000);
+
+// CONFETI
+function createConfetti() {
+  const confetti = document.createElement('div');
+  confetti.classList.add('confetti');
+  confetti.style.left = Math.random() * 100 + 'vw';
+  confetti.style.backgroundColor = ['#FF3B82', '#FFD6E5', '#FFFFFF', '#FFAAD4'][Math.floor(Math.random() * 4)];
+  confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+  confetti.style.opacity = Math.random();
+  document.body.appendChild(confetti);
+  setTimeout(() => confetti.remove(), 5000);
+}
+for(let i = 0; i < 100; i++){ setTimeout(createConfetti, i * 50); } // cae al entrar
+setInterval(createConfetti, 300); // sigue cayendo de a poco
+</script>
+
+</body>
+</html>
