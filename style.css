@@ -313,3 +313,107 @@ nav a:hover {
   from { filter: drop-shadow(0 0 5px #FFD700); }
   to   { filter: drop-shadow(0 0 20px #FF3B82) drop-shadow(0 0 40px #FFD700); }
 }
+
+@keyframes hamaca {
+
+    0% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(4deg);
+    }
+
+    100% {
+        transform: rotate(-4deg);
+    }
+
+}
+
+.s-globos{
+    width:130px;
+    top:20%;
+    right:8%;
+    animation: hamaca 4s ease-in-out infinite;
+    transform-origin: top center;
+}
+@keyframes corazon {
+
+    0%,100%{
+        transform: translateY(0px) scale(1);
+    }
+
+    25%{
+        transform: translateY(-3px) scale(1.08);
+    }
+
+    50%{
+        transform: translateY(-6px) scale(1);
+    }
+
+    75%{
+        transform: translateY(-3px) scale(1.05);
+    }
+
+}
+
+.s-disco{
+    animation: corazon 3.5s ease-in-out infinite;
+}
+.texto-invitacion{
+    opacity:0;
+    transform:translateY(30px);
+    animation: aparecer 1.5s ease forwards;
+    animation-delay:1s;
+}
+
+@keyframes aparecer{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.card-invitacion{
+
+    width:min(90%,460px);
+
+    margin:40px auto;
+
+    padding:30px;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:25px;
+
+    border:2px solid rgba(255,255,255,.5);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+.card-invitacion{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:entradaCard 1s ease forwards;
+
+    animation-delay:1.2s;
+
+}
+@keyframes entradaCard{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+.bola{
+    animation: respirar 4s infinite;
+}
