@@ -417,60 +417,37 @@ nav a:hover {
 .bola{
     animation: respirar 4s infinite;
 }
-/* Ajustes responsive para stickers en pantallas chicas */
-@media (max-width: 576px) {
-  .s-balloon {
-    position: static;
-    display: block;
-    margin: 15px auto;
-    transform: none;
-    width: 80px;
-    height: auto;
-  }
-
-  .s-globos {
-    position: static;
-    display: block;
-    margin: 15px auto;
-    transform: none;
-    width: 90px;
-    height: auto;
-  }
-
-  .s-disco {
-    position: static;
-    display: block;
-    margin: 15px auto;
-    transform: none;
-    width: 70px;
-    height: auto;
-  }
-
-  .s-date {
-    position: static;
-    display: block;
-    margin: 15px auto;
-    transform: none;
-    width: 100px;
-    height: auto;
-  }
-
-  .tip-bottle {
-    position: static;
-    display: block;
-    margin: 20px auto;
-    transform: none;
-    width: 90px;
-    height: 120px;
-  }
+/* Stickers en escritorio */
+.sticker {
+  position: absolute;
+  z-index: 1;
 }
+.sticker img {
+  width: 100%;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+.s-copa { width: 90px; top: 10%; left: 5%; transform: rotate(-15deg); }
+.s-disco { width: 130px; top: 20%; left: 15%; transform: rotate(10deg); }
+.s-globos { width: 140px; top: 5%; right: 8%; }
+.s-mtv { width: 80px; top: 25%; right: 15%; transform: rotate(8deg); }
+.s-ticket { width: 150px; top: 40%; right: 20%; transform: rotate(-5deg); }
+.s-labios { width: 100px; bottom: 15%; right: 10%; }
+.s-gorro { width: 80px; top: 50%; left: 8%; transform: rotate(-20deg); }
+.s-corazon { width: 70px; top: 55%; left: 12%; }
+.s-mujer { width: 110px; bottom: 25%; left: 5%; }
+.s-balloon { width: 130px; bottom: 15%; left: 15%; }
+
+/* Stickers en móvil */
 @media (max-width: 576px) {
-  .s-balloon, .s-globos, .s-disco, .s-date, .tip-bottle {
-    position: static !important;
+  .sticker {
+    position: relative;   /* ya no absoluto */
     display: block;
     margin: 15px auto;
-    transform: none;
-    max-width: 80px;
+    text-align: center;
+  }
+  .sticker img {
+    max-width: 100px;     /* tamaño adaptable */
     height: auto;
+    transform: none;
   }
 }
