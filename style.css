@@ -464,3 +464,13 @@ nav a:hover {
     height: 120px;
   }
 }
+@media (max-width: 576px) {
+  .s-balloon, .s-globos, .s-disco, .s-date, .tip-bottle {
+    position: static !important;
+    display: block;
+    margin: 15px auto;
+    transform: none;
+    max-width: 80px;
+    height: auto;
+  }
+}
