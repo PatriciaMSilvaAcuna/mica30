@@ -60,20 +60,6 @@
   60% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
-header, footer {
-  background: url('https://imgur.com/a/meGhTRg'), var(--pink);
-  background-size: cover;
-  background-position: center;
-  padding: 12px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky; 
-  top: 0; 
-  z-index: 100;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  animation: slideDown 0.8s ease;
-}
 
 .logo {
   font-family: 'Bebas Neue';
@@ -152,11 +138,25 @@ nav a:hover::after {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
 }
-header, footer {
-  background: url('img/pgb.png');
-  background-size: cover;
-  background-position: center;
-  color: white;
+header,
+footer{
+    background:url('img/pgb.png');
+    background-size: 400px;
+    background-position:center;
+    color:white;
+
+    padding:12px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+
+    animation:slideDown .8s ease;
 }
 #footer-text {
   display: center block;          /* se ajusta al contenido */
@@ -258,21 +258,50 @@ nav a:hover {
   100% { transform: scale(1); }
 }
 .tip-bottle {
-  background: linear-gradient(135deg, #FF3B82, #FF6FB5);
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+  box-shadow: 0 0 15px #FF3B82;
+
   color: white;
   font-weight: 700;
   font-size: 0.9rem;
   text-align: center;
-  width: 120px;
+  width: 80px;
   height: 160px;
-  border-radius: 60% 60% 30% 30%; /* simula forma de botella/copa */
+  border-radius: 40% 40% 20% 20%; /* cuerpo de botella */
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 20px auto;
-  box-shadow: 0 0 15px #FFD700;
-  animation: glowPulse 2s infinite alternate;
+  
+  position: relative;
+  animation: bounce 2s infinite ease-in-out, glowPulse 2s infinite alternate;
 }
+
+/* cuello de la botella */
+.tip-bottle::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: #FF3B82;
+  border-radius: 10px;
+}
+
+/* Rebote suave */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Brillo pulsante */
+@keyframes glowPulse {
+  from { box-shadow: 0 0 10px #FFD700; }
+  to   { box-shadow: 0 0 25px #FFD700, 0 0 40px #FF3B82; }
+}
+
 
 /* Animación de brillo */
 @keyframes glowPulse {
@@ -289,7 +318,7 @@ nav a:hover {
 /* En pantallas chicas lo movemos debajo del timer */
 @media (max-width: 576px) {
   .s-date {
-    position: static;
+    position: relative;
     display: block;
     margin: 15px auto;
     transform: none;
@@ -435,19 +464,290 @@ nav a:hover {
 .s-gorro { width: 80px; top: 50%; left: 8%; transform: rotate(-20deg); }
 .s-corazon { width: 70px; top: 55%; left: 12%; }
 .s-mujer { width: 110px; bottom: 25%; left: 5%; }
-.s-balloon { width: 130px; bottom: 15%; left: 15%; }
+.s-balloon { width: 80px; left: 10vw; bottom: 10vh; }
+
 
 /* Stickers en móvil */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .sticker {
-    position: relative;   /* ya no absoluto */
+    position: relative;
     display: block;
     margin: 15px auto;
     text-align: center;
   }
   .sticker img {
-    max-width: 100px;     /* tamaño adaptable */
+    max-width: 90px;
     height: auto;
     transform: none;
   }
+  header{
+      position:relative;
+      padding:15px;
+      flex-wrap:wrap;           /* IMPORTANTE */
+      justify-content:space-between;
+      align-items:center;
+  }
+
+  .menu-toggle{
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+    order:2;
+}
+
+  nav{
+      display:none;
+      flex-direction:column;
+      width:100%;
+      margin-top:15px;
+      background:rgba(255,59,130,0.95);
+      border-radius:18px;
+      padding:15px;
+      order:3;                  /* debajo del header */
+      backdrop-filter:blur(10px);
+  }
+
+    nav.active{
+        display:flex;
+    }
+
+    nav a{
+      width:100%;
+      text-align:center;
+      padding:14px;
+      margin:6px 0;
+      border-radius:14px;
+      background:rgba(255,255,255,0.12);
+  }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .sticker{
+        display:none;
+    }
+
+
+}
+.s-balloon {
+  left: 10vw;
+  bottom: 15vh;
+}
+
+/* ===========================
+   BOTÓN MENÚ HAMBURGUESA
+=========================== */
+
+.menu-toggle{
+    display:flex;
+
+    width:52px;
+    height:52px;
+
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(10px);
+
+    border:2px solid #FFD700;
+    border-radius:18px;
+
+    color:#fff;
+    font-size:1.6rem;
+
+    cursor:pointer;
+
+    transition:all .35s ease;
+
+    box-shadow:
+        0 0 8px rgba(255,215,0,.5),
+        0 0 15px rgba(255,59,130,.35);
+}
+
+.menu-toggle:hover{
+
+    background:#FF3B82;
+
+    transform:scale(1.08) rotate(90deg);
+
+    box-shadow:
+        0 0 15px #FFD700,
+        0 0 30px #FF3B82;
+}
+
+.menu-toggle i{
+    transition:.35s;
+}
+
+.menu-toggle.active i{
+    transform:rotate(180deg);
+}
+ :root{
+    --pink:#FF3B82;
+    --light-pink:#FFD6E5;
+    --bg-pink:#FFF0F5;
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{
+    font-family: 'Poppins', sans-serif;
+    background: url('https://imgur.com/a/meGhTRg'), linear-gradient(180deg, #FFD6E5 0%, #FFF0F5 100%);
+    background-size: 400px;
+    background-attachment: fixed;
+    color:#4A2C3A;
+    overflow-x:hidden;
+  }
+  
+  header{
+    
+    background-size: 400px;
+    padding: 12px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky; top:0; z-index:100;
+  }
+  .logo{font-family:'Bebas Neue'; font-size:2rem; color:white; letter-spacing:2px;}
+  .logo span{background:white; color:var(--pink); padding:2px 8px; border-radius:20px;}
+  nav a{color:white; text-decoration:none; margin:0 10px; font-size:0.9rem;}
+  .btn-confirm{
+    background:transparent; border:2px solid white; color:white; 
+    padding:8px 16px; border-radius:30px; font-weight:600; cursor:pointer;
+  }
+
+  .hero{
+    padding:100px 5% 120px;
+    text-align:center;
+    position:relative;
+  }
+  .hero h1{
+    font-family:'Bebas Neue'; 
+    font-size:4.5rem; 
+    color:var(--pink);
+    background:white; padding:15px 25px; border-radius:20px;
+    display:inline-block; transform:rotate(-3deg);
+    box-shadow: 5px 5px 0px #FF3B82; position:relative; z-index:2;
+    text-shadow: 0 0 10px #fff, 0 0 20px #FF3B82; /* BRILLO */
+  }
+  .hero h2{font-family:'Dancing Script'; font-size:2.2rem; color:#4A2C3A; margin-top:10px; position:relative; z-index:2;}
+  .big-30{font-family:'Bebas Neue'; font-size:8rem; color:var(--pink); text-shadow:4px 4px white, 0 0 30px #FF3B82; position:relative; z-index:2;}
+
+
+  .countdown{padding:80px 5%; text-align:center; background:var(--bg-pink); position:relative;}
+  .countdown h2{font-family:'Dancing Script'; font-size:3rem; color:var(--pink); text-decoration:underline wavy;}
+  .timer{display:flex; justify-content:center; gap:15px; margin-top:30px; flex-wrap:wrap;}
+  .time-box{
+    background:white; padding:20px; border-radius:15px; min-width:100px;
+    box-shadow:0 4px 15px rgba(255,59,130,0.3);
+    border: 2px solid var(--light-pink);
+  }
+  .time-box span{font-family:'Bebas Neue'; font-size:3rem; color:var(--pink);}
+
+  .gallery{padding:60px 5%; text-align:center; position:relative;}
+  .gallery h2{font-family:'Dancing Script'; font-size:2.5rem;}
+  .gallery h2 span{color:var(--pink);}
+  .photos{display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:30px 0;}
+  .photos img{width:160px; height:160px; object-fit:cover; border:8px solid white; transform:rotate(-5deg); box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+  .photos img:nth-child(even){transform:rotate(5deg);}
+  .btn-pink{
+    background:var(--pink); color:white; border:none; padding:12px 25px; 
+    border-radius:30px; font-weight:600; cursor:pointer; font-size:1rem;
+    box-shadow: 0 4px 10px rgba(255,59,130,0.4);
+  }
+
+  .details{
+    background:var(--bg-pink); padding:60px 5%; 
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px; position:relative;
+  }
+  .details h2{font-family:'Dancing Script'; font-size:3rem; color:var(--pink); grid-column:1/-1; text-align:center;}
+  .detail-item h3{color:var(--pink); font-weight:700; margin-bottom:5px;}
+
+  .confirmacion{
+    background: url('https://imgur.com/H2CcTd0'), var(--pink);
+    background-size: 400px;
+    color:white; text-align:center; padding:60px 5%; position:relative;
+  }
+  .confirmacion h2{font-family:'Bebas Neue'; font-size:3rem; margin-bottom:10px;}
+  .confirmacion p{font-family:'Dancing Script'; font-size:1.8rem;}
+
+  /* CONFETI */
+  .confetti {
+    position: fixed; width: 10px; height: 10px;
+    background-color: var(--pink); top: -10px;
+    animation: fall linear infinite; z-index: 1000; pointer-events: none;
+  }
+  @keyframes fall {
+    to { transform: translateY(100vh) rotate(360deg); }
+  }
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.photos img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.btn-pink {
+  background: #ff3b82;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  overflow: auto;
+}
+
+#flipbook {
+  margin: 50px auto;
+}
+
+#flipbook img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.close {
+  position: absolute;
+  top: 20px; right: 35px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+}
+.btn-pink {
+  background: #ff3b82;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pink::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: all 0.5s;
+}
+
+.btn-pink:hover::after {
+  left: 100%;
 }

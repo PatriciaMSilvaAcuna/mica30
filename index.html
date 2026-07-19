@@ -24,119 +24,14 @@
 <meta name="twitter:image" content="https://mica30.netlify.app/img/logo.png">
 
 <meta name="theme-color" content="#FF3B82">
-<link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 
 <link rel="stylesheet" href="style.css">
-</head>
 
-</head>
+
     <!-- FUENTE DE ICONOS GRATIS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --pink:#FF3B82;
-    --light-pink:#FFD6E5;
-    --bg-pink:#FFF0F5;
-  }
-  *{margin:0; padding:0; box-sizing:border-box;}
-  body{
-    font-family: 'Poppins', sans-serif;
-    background: url('https://imgur.com/a/meGhTRg'), linear-gradient(180deg, #FFD6E5 0%, #FFF0F5 100%);
-    background-size: 400px;
-    background-attachment: fixed;
-    color:#4A2C3A;
-    overflow-x:hidden;
-  }
-  
-  header{
-    
-    background-size: 400px;
-    padding: 12px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky; top:0; z-index:100;
-  }
-  .logo{font-family:'Bebas Neue'; font-size:2rem; color:white; letter-spacing:2px;}
-  .logo span{background:white; color:var(--pink); padding:2px 8px; border-radius:20px;}
-  nav a{color:white; text-decoration:none; margin:0 10px; font-size:0.9rem;}
-  .btn-confirm{
-    background:transparent; border:2px solid white; color:white; 
-    padding:8px 16px; border-radius:30px; font-weight:600; cursor:pointer;
-  }
 
-  .hero{
-    padding:100px 5% 120px;
-    text-align:center;
-    position:relative;
-  }
-  .hero h1{
-    font-family:'Bebas Neue'; 
-    font-size:4.5rem; 
-    color:var(--pink);
-    background:white; padding:15px 25px; border-radius:20px;
-    display:inline-block; transform:rotate(-3deg);
-    box-shadow: 5px 5px 0px #FF3B82; position:relative; z-index:2;
-    text-shadow: 0 0 10px #fff, 0 0 20px #FF3B82; /* BRILLO */
-  }
-  .hero h2{font-family:'Dancing Script'; font-size:2.2rem; color:#4A2C3A; margin-top:10px; position:relative; z-index:2;}
-  .big-30{font-family:'Bebas Neue'; font-size:8rem; color:var(--pink); text-shadow:4px 4px white, 0 0 30px #FF3B82; position:relative; z-index:2;}
-
-
-  .countdown{padding:80px 5%; text-align:center; background:var(--bg-pink); position:relative;}
-  .countdown h2{font-family:'Dancing Script'; font-size:3rem; color:var(--pink); text-decoration:underline wavy;}
-  .timer{display:flex; justify-content:center; gap:15px; margin-top:30px; flex-wrap:wrap;}
-  .time-box{
-    background:white; padding:20px; border-radius:15px; min-width:100px;
-    box-shadow:0 4px 15px rgba(255,59,130,0.3);
-    border: 2px solid var(--light-pink);
-  }
-  .time-box span{font-family:'Bebas Neue'; font-size:3rem; color:var(--pink);}
-
-  .gallery{padding:60px 5%; text-align:center; position:relative;}
-  .gallery h2{font-family:'Dancing Script'; font-size:2.5rem;}
-  .gallery h2 span{color:var(--pink);}
-  .photos{display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:30px 0;}
-  .photos img{width:160px; height:160px; object-fit:cover; border:8px solid white; transform:rotate(-5deg); box-shadow:0 4px 15px rgba(0,0,0,0.2);}
-  .photos img:nth-child(even){transform:rotate(5deg);}
-  .btn-pink{
-    background:var(--pink); color:white; border:none; padding:12px 25px; 
-    border-radius:30px; font-weight:600; cursor:pointer; font-size:1rem;
-    box-shadow: 0 4px 10px rgba(255,59,130,0.4);
-  }
-
-  .details{
-    background:var(--bg-pink); padding:60px 5%; 
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px; position:relative;
-  }
-  .details h2{font-family:'Dancing Script'; font-size:3rem; color:var(--pink); grid-column:1/-1; text-align:center;}
-  .detail-item h3{color:var(--pink); font-weight:700; margin-bottom:5px;}
-
-  .confirmacion{
-    background: url('https://imgur.com/H2CcTd0'), var(--pink);
-    background-size: 400px;
-    color:white; text-align:center; padding:60px 5%; position:relative;
-  }
-  .confirmacion h2{font-family:'Bebas Neue'; font-size:3rem; margin-bottom:10px;}
-  .confirmacion p{font-family:'Dancing Script'; font-size:1.8rem;}
-
-  @media(max-width:768px){
-    nav{display:none;}
-    .hero h1{font-size:2.5rem;}
-    .sticker{display:none;}
-  }
-
-  /* CONFETI */
-  .confetti {
-    position: fixed; width: 10px; height: 10px;
-    background-color: var(--pink); top: -10px;
-    animation: fall linear infinite; z-index: 1000; pointer-events: none;
-  }
-  @keyframes fall {
-    to { transform: translateY(100vh) rotate(360deg); }
-  }
-</style>
 </head>
 <body>
 
@@ -144,7 +39,10 @@
 
 <header>
   <div class="logo">MICA <span>30</span></div>
-  <nav>
+  <button class="menu-toggle" id="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <nav id="menu">
     <a href="#cuenta">Cuenta regresiva</a>
     <a href="#galeria">Galería</a>
     <a href="#detalles">Detalles</a>
@@ -212,17 +110,31 @@
 <section class="gallery" id="galeria">
   <div class="sticker s-mujer"><img class="bola "src="img/db.png"></div>
   
+  <section>
   <h2><span>30 años</span> en 6 fotos</h2>
   <div class="photos">
-    <!-- CAMBIA ESTAS 6 FOTOS POR LAS DE MICA -->
     <img src="img/mica1.PNG" alt="">
-    <img src="https://placehold.co/160x160/FFD6E5/FF3B82?text=Foto+2" alt="">
-    <img src="https://placehold.co/160x160/FFD6E5/FF3B82?text=Foto+3" alt="">
-    <img src="https://placehold.co/160x160/FFD6E5/FF3B82?text=Foto+4" alt="">
-    <img src="https://placehold.co/160x160/FFD6E5/FF3B82?text=Foto+5" alt="">
+    <img src="img/mica2.PNG" alt="">
+    <img src="img/mica3.PNG" alt="">
+    <img src="img/mica4.PNG" alt="">
+    <img src="img/mica5.PNG" alt="">
     <img src="img/mxs.png" alt="">
   </div>
-  <button class="btn-pink">VER TODAS LAS FOTOS ✨</button>
+  <button class="btn-pink" id="openFlipbook">VER TODAS LAS FOTOS ✨</button>
+</section>
+
+<!-- Modal con flipbook -->
+<div id="flipbookModal" class="modal">
+  <span class="close">&times;</span>
+  <div id="flipbook">
+    <div><img src="img/mica1.PNG" alt=""></div>
+    <div><img src="img/mica2.PNG" alt=""></div>
+    <div><img src="img/mica3.PNG" alt=""></div>
+    <div><img src="img/mica4.PNG" alt=""></div>
+    <div><img src="img/mica5.PNG" alt=""></div>
+    <div><img src="img/mxs.png" alt=""></div>
+  </div>
+</div>
 </section>
 
 <section class="details" id="detalles">
@@ -240,6 +152,8 @@
     <div style="background:#FF3B82; color:white; padding:10px; border-radius:50%; width:120px; height:120px; display:flex; align-items:center; justify-content:center; text-align:center; font-size:0.8rem; margin:10px auto; font-weight:700;">
       COQUETA<br>LINDA<br>Y AL 100
     </div>
+    <br>
+    
     <div class="tip-bottle">
   ¡Traé tu<br>bebida! 🍷
 </div>
@@ -275,7 +189,7 @@
   <footer>
     <br>
     <br>
-  <p id="footer-text">Creado por P@tito  con <span class="fa fa-heart pulse2"></span> Para Mica</p>
+  <p id="footer-text">By P@tito <span class="fa fa-heart pulse2"></span> for Mica</p>
   <br>
   
   </footer>
@@ -306,7 +220,57 @@ function createConfetti() {
 }
 for(let i = 0; i < 100; i++){ setTimeout(createConfetti, i * 50); } // cae al entrar
 setInterval(createConfetti, 300); // sigue cayendo de a poco
+
+const boton = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+const icono = boton.querySelector("i");
+
+boton.addEventListener("click", () => {
+
+    menu.classList.toggle("active");
+    boton.classList.toggle("active");
+
+    if(menu.classList.contains("active")
+    
+    ){
+        icono.classList.remove("fa-bars");
+        icono.classList.add("fa-xmark");
+    }else{
+        icono.classList.remove("fa-xmark");
+        icono.classList.add("fa-bars");
+    }
+
+});
+
+  const modal = document.getElementById("flipbookModal");
+  const openBtn = document.getElementById("openFlipbook");
+  const closeBtn = document.querySelector(".close");
+
+  openBtn.onclick = () => {
+    modal.style.display = "block";
+    $("#flipbook").turn({
+      width: window.innerWidth < 600 ? 300 : 800,
+      height: window.innerWidth < 600 ? 400 : 500,
+      autoCenter: true,
+      display: window.innerWidth < 600 ? 'single' : 'double'
+    });
+  };
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+    $("#flipbook").turn("destroy");
+  };
+
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      $("#flipbook").turn("destroy");
+    }
+  };
+
 </script>
+<script src="libs/turn.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 </html>
