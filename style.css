@@ -257,38 +257,8 @@ nav a:hover {
   60% { transform: scale(1.15); }
   100% { transform: scale(1); }
 }
-.tip-bottle {
-  background: linear-gradient(135deg, #f1c40f, #f39c12);
-  box-shadow: 0 0 15px #FF3B82;
 
-  color: white;
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-align: center;
-  width: 80px;
-  height: 160px;
-  border-radius: 40% 40% 20% 20%; /* cuerpo de botella */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-  
-  position: relative;
-  animation: bounce 2s infinite ease-in-out, glowPulse 2s infinite alternate;
-}
 
-/* cuello de la botella */
-.tip-bottle::before {
-  content: "";
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
-  background: #FF3B82;
-  border-radius: 10px;
-}
 
 /* Rebote suave */
 @keyframes bounce {
@@ -891,6 +861,14 @@ nav a:hover {
     width: 40px; /* más chiquitos en celu */
     opacity: 0.9; /* que no tapen el texto */
   }
+  .s-jenna{
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    right: 5%;
+    transform: rotate(8deg);
+
+  }
   
   /* Reposicionamos para que no se corten */
   .s-copa { top: 3%; left: 3%; }
@@ -1045,4 +1023,26 @@ html, body {
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0px #FF3B82;
   transition: all 0.2s ease;
+}
+@media (max-width: 768px) {
+  .s-jenna {
+    width: 28vw;   /* en tablet/celu la hacemos un poco más grande proporcional */
+    height: 28vw;
+    max-width: 90px;
+    max-height: 90px;
+    top: 68%;
+    right: 4%;
+    transform: rotate(8deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .s-jenna {
+    width: 50vw;   /* en celu chico ocupa más para que se vea */
+    height: 50vw;
+    max-width: 80px;
+    max-height: 80px;
+    top: 45%;
+    right: 4%;
+  }
 }
