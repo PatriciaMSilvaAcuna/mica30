@@ -96,9 +96,10 @@
   
   <div class="sticker s-labios"><img src="img/star.png"></div>
   <div class="sticker s-labios"><img src="img/star.png"></div>
-  
+  <br>
   
   <h2>Cuenta regresiva</h2>
+  <br>
   <div class="timer">
     <div class="time-box"><span id="days">00</span><br>DÍAS</div>
     <div class="time-box"><span id="hours">00</span><br>HORAS</div>
@@ -114,11 +115,16 @@
   <h2><span>30 años</span> en 6 fotos</h2>
   <div class="photos">
     <img src="img/mica1.PNG" alt="">
-    <img src="img/mica2.PNG" alt="">
-    <img src="img/mica3.PNG" alt="">
-    <img src="img/mica4.PNG" alt="">
-    <img src="img/mica5.PNG" alt="">
+    <!-- ACA VA EL EFECTO HOVER -->
+    <div class="mica-saludo">
+      <img src="img/mica-normal.webp" alt="Mica de chiquita"> 
+      <img src="img/mica-saludando.webp" alt="Mica saludando">
+    </div>
+    <!-- HASTA ACA -->
+    <img src="img/mica3.jpeg" alt="">
+    <img src="img/mendo.jpeg" alt="">
     <img src="img/mxs.png" alt="">
+    <img src="img/video.gif" alt="Trago y sonrisa" class="gif-countdown">
   </div>
   <button class="btn-pink" id="openFlipbook">VER TODAS LAS FOTOS ✨</button>
 </section>
@@ -128,11 +134,13 @@
   <span class="close">&times;</span>
   <div id="flipbook">
     <div><img src="img/mica1.PNG" alt=""></div>
-    <div><img src="img/mica2.PNG" alt=""></div>
-    <div><img src="img/mica3.PNG" alt=""></div>
-    <div><img src="img/mica4.PNG" alt=""></div>
+    <div><img src="img/mica2.jpg" alt=""></div>
+    <div><img src="img/mica3.jpeg" alt=""></div>
+    <div><img src="img/mendo.jpeg" alt=""></div>
+     <div><img src="img/mica4.jpeg" alt=""></div>
     <div><img src="img/mica5.PNG" alt=""></div>
     <div><img src="img/mxs.png" alt=""></div>
+    <img src="img/video.gif" alt="Trago y sonrisa" class="gif-countdown">
   </div>
 </div>
 </section>
@@ -148,16 +156,17 @@
   <div class="detail-item">
     <h3>DRESS CODE</h3>
     <p>Más que el outfit, importa la actitud 💖</p>
-    <p> y Que Vengas!!!</p>
-    <div style="background:#FF3B82; color:white; padding:10px; border-radius:50%; width:120px; height:120px; display:flex; align-items:center; justify-content:center; text-align:center; font-size:0.8rem; margin:10px auto; font-weight:700;">
-      COQUETA<br>LINDA<br>Y AL 100
-    </div>
-    <br>
-    
-    <div class="tip-bottle">
-  ¡Traé tu<br>bebida! 🍷
+    <p> y que vengas!!!</p>
+   
 </div>
-
+ <div class="detail-item bebida-item">
+    <div class="circulo-img">
+      <img src="img/disfrutar.PNG" alt="Brindemos">
+    </div>
+    <h3>BARRA LIBRE DE BUENA ONDA</h3>
+    <p class="leyenda-bebida">Si querés brindar, trae lo que te haga feliz 🥂</p>
+    <p class="leyenda-bebida">El freezer está grande y el corazón también</p>
+    <p class="leyenda-bebida">Lo importante es compartir... y un fernet no viene mal 😜</p>
   </div>
   <div class="detail-item" id="ubicacion">
     <h3>LUGAR</h3>
@@ -193,10 +202,12 @@
   <br>
   
   </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="libs/turn.min.js"></script>
 
 <script>
 // CUENTA REGRESIVA
-const eventDate = new Date("Septembre 12, 2026 21:00:00").getTime(); // FECHA DEL EVENTO
+const eventDate = new Date("September 12, 2026 21:00:00").getTime(); // FECHA DEL EVENTO
 const timer = setInterval(function(){
   const now = new Date().getTime();
   const distance = eventDate - now;
@@ -269,8 +280,7 @@ boton.addEventListener("click", () => {
   };
 
 </script>
-<script src="libs/turn.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </body>
 </html>
